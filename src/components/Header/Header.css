@@ -1,0 +1,24 @@
+.login-btn{
+    background-color:coral;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+.signOutBtn{
+    background-color:coral;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 8px;
+    display: inline-block;
+}
+
+.header-area{
+    padding-top: 50px;
+}
+
+.logo{
+    color: black;
+}
