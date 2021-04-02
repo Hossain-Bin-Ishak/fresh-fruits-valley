@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import AddProduct from '../AddProduct/AddProduct';
 import {Button }from 'react-bootstrap';
 import { useHistory} from 'react-router';
 import { UserContext } from '../../App';
+import './Admin.css';
 
 const Admin = () => {
 
@@ -17,12 +17,20 @@ const Admin = () => {
        }
     }
   return (
-    <div className="text-center">
-      
-        <Button onClick={() => {
+    <div className="container mb-3 text-center">
+   
+ <div className="admin-area">
+ <Button className="mr-3" onClick={() => {
                             handleAddProduct()
 
                         }}>Add Product</Button>
+
+        
+<Button onClick={() => {
+                            handleAddProduct()
+
+                        }}>Manage Product</Button>
+ </div>
     
     </div>
   );

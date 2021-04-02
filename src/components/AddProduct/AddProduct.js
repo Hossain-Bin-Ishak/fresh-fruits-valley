@@ -2,6 +2,8 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import './AddProduct.css';
+import Admin from "../Admin/Admin";
 
 const AddProduct = () => {
 
@@ -52,8 +54,8 @@ const AddProduct = () => {
         container.innerHTML = '';
         fruits.forEach(fr => {
             const p = document.createElement('p');
-            p.innerHTML = `${fr.name} Price: ${fr.price} Wigth:  ${fr.wight}
-            <button onclick="deleteProduct('${fr._id}')">Delete</button>
+            p.innerHTML = `Fruit Name: ${fr.name} | Wigth:  ${fr.wight} gm | Price: ${fr.price} tk
+             <button onclick="deleteProduct(event, '${fr._id}')">Delete</button>
                 `;
             container.appendChild(p);
         });
@@ -61,15 +63,15 @@ const AddProduct = () => {
  }
  loadAllProducts();
 
- function deleteProduct(id){
+ function deleteProduct(event, id){
   fetch(`/delete/${id}`,{
       method: 'DELETE'
   })
   .then(res => res.json())
   .then(result => {
-      // if(result){
-      //     event.target.parentNode.style.display = 'none';
-      // }
+      if(result){
+          event.target.parentNode.style.display = 'none';
+      }
   })
 }
 
@@ -77,28 +79,44 @@ const AddProduct = () => {
 
 
     return (
-    <div className="text-center">  
-        <form  action="/addProduct" method="POST" onSubmit={handleSubmit(onSubmit)}>
-        <input name="fruitName" type="text" placeholder="Fruit Name" ref={register({ required: true })} />
-        <br/>
-        <input name="wight" type="text" placeholder="Wight" ref={register({ required: true })} />
-        <br/>
-        <input name="price" type="text" placeholder="Price" ref={register({ required: true })} />
-        <br/>
-        <input name="image" type="file" onChange={handleImageUpload}/>
-        <br/>
-        {errors.image && <span>This field is required</span>}
-        
-       <input  type="submit"/>
-        </form>
-
-        <div id="products">
-
+    <div className="">
+    <div className="container ">
+      <div className="admin-area">
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <Admin></Admin>
         </div>
-        <div id="update">
+      </div>
+      </div>
+    </div>
+    <div className="container">
+     <div className="form-area">
+     <div className="row">
+        <div className="col-md-12">
+          <div className="text-center">  
+            <form className="form-style"  action="/addProduct" method="POST" onSubmit={handleSubmit(onSubmit)}>
+              <input name="fruitName" type="text" placeholder="Fruit Name" ref={register({ required: true })} />
+              <br/>
+              <input name="wight" type="text" placeholder="Wight" ref={register({ required: true })} />
+              <br/>
+              <input name="price" type="text" placeholder="Price" ref={register({ required: true })} />
+              <br/>
+              <input name="image" type="file" onChange={handleImageUpload}/>
+              <br/>
+              {errors.image && <span>This field is required</span>}
+              
+              <input className="btn btn-primary"  type="submit"/>
+            </form>
 
+          <div id="products">
+
+          </div>
+      
+          </div>
+          </div>
         </div>
-
+     </div>
+      </div>
     </div>
     );
 };

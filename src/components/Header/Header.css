@@ -17,8 +17,14 @@
 
 .header-area{
     padding-top: 50px;
-}
+} 
 
 .logo{
     color: black;
+}
+
+
+.menu-area{
+    background-color: white;
+    opacity: .85;
 }

@@ -1,0 +1,16 @@
+.login-area{
+    background-color: white;
+    opacity: .85;
+    min-height: 500px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.signin-btn{
+    border: 2px solid #ddd;
+    background-color: rgb(87, 179, 255);
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px #222;
+}

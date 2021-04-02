@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useHistory, useLocation, useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import './Checkout.css';
 import { UserContext } from '../../App';
 
 const Checkout = () => {
@@ -48,12 +48,10 @@ const Checkout = () => {
         
      }
 
-     const [order, setOrder] = useState({})
-
     return (
-        <div className="container">
-                            
-                <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
+        <div className="container text-center">
+            <div className="checkout-form-area">
+            <form className='checkout-form' onSubmit={handleSubmit(onSubmit)}>
                 <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -74,6 +72,7 @@ const Checkout = () => {
                 </Table>
               <input type="submit" value='Place Order' className="btn btn-success float-right"/>
                 </form>
+            </div>
         </div>
     );
 };

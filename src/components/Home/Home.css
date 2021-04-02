@@ -1,0 +1,13 @@
+body{
+    background-image: url("https://www.worldatlas.com/upload/46/cb/e1/shutterstock-252338818.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.content-area{
+    background-color: white;
+    opacity: .85;
+    padding: 20px;
+}

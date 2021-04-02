@@ -9,8 +9,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Orders from './components/Orders/Orders';
 import Login from './components/Login/Login';
