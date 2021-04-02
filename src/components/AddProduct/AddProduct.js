@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import './AddProduct.css';
@@ -7,7 +6,7 @@ import Admin from "../Admin/Admin";
 
 const AddProduct = () => {
 
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
     const onSubmit = data => {
       console.log(data.price, data.wight);
